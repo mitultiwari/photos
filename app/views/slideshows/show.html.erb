@@ -1,0 +1,16 @@
+
+<p> <i><%=h  @slideshow.name %></i> </p>
+
+<% if @slide %>
+<div id="slides">
+  <%= render :partial => "show_slide" %>
+</div>
+
+<%= periodically_call_remote :update => "slides",
+                             :url => { :action => :show_slide },
+                             :frequency => 2.0 %>
+
+<% end %>
+
+<%= link_to 'Edit', edit_slideshow_path(@slideshow) %> |
+<%= link_to 'Back', slideshows_path %>

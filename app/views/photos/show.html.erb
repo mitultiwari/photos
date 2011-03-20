@@ -1,0 +1,24 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<%= image_tag("photos/"+@photo.filename) %>
+
+<p>
+  <b>Filename:</b>
+  <%= @photo.filename %>
+</p>
+
+<p>
+  <b>Thumbnail:</b>
+  <%= @photo.thumbnail %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @photo.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

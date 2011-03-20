@@ -1,0 +1,23 @@
+<h1>Editing slideshow</h1>
+
+<%= link_to 'Play this slideshow', :action => 'show', :id => @slideshow %>
+
+<div id='slideshow-contents'>
+  <%= render :partial => 'show_slides_draggable' %>
+</div>
+
+<div id='slideshow-attributes'>
+  <% form_for(@slideshow) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :name %> <br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit "Update" %>
+    </p>
+  <% end %>
+</div>
+
+

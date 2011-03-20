@@ -1,0 +1,4 @@
+<ol id='sortable_thumbs'>
+  <%= render :partial => 'sortable_slide', :collection => @slideshow.slides %>
+</ol>
+<%= sortable_element('sortable_thumbs', :url => {:action => 'update_slide_order'}) %>

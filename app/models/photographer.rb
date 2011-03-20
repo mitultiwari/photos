@@ -1,0 +1,2 @@
+class Photographer < Person
+end

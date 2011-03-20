@@ -1,0 +1,29 @@
+<p> <%= link_to 'New slideshow', new_slideshow_path %> </p>
+
+<div id="slideshow-summaries">
+<% for slideshow in @slideshows %>
+  <div class="slideshow-summary">
+    <div class="slideshow-caption">
+      <%= slideshow.name %>
+      <small>(<%= slideshow.slides.size %> slides)</small>
+    </div>
+
+    <div class="slideshow-thumbnails">
+      <% 5.times do |i| -%>
+        <%= thumbnail_tag slideshow.slides[i] %>
+      <% end -%>
+      &nbsp;<strong>...</strong>
+    </div>
+
+    <div class-"slideshow-controls">
+      <%= link_to 'Play', slideshow %>
+      <%= link_to 'Edit', edit_slideshow_path(slideshow) %>
+      <%= link_to 'Delete', slideshow, :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+  </div>
+  <br />
+  <% end %>
+  </div>
+  <br />
+
+
